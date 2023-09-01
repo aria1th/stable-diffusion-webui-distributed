@@ -1,3 +1,5 @@
 
 *.pyc
 workers.json
+config.json
+*.json

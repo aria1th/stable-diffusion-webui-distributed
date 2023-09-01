@@ -28,11 +28,11 @@ def preload(parser):
 		help="Enable debug information",
 		action="store_true"
 	)
-	webui_root_path = Path(abspath(getsourcefile(lambda: 0))).parent.parent.parent
-	config_path = webui_root_path.joinpath('distributed-config.json')
+	extension_path = Path(abspath(getsourcefile(lambda: 0))).parent
+	config_path = extension_path.joinpath('distributed-config.json')
 	# add config file
 	parser.add_argument(
 		"--distributed-config",
-		help="config file to load / save, default: distributed-config.json",
+		help="config file to load / save, default: $WEBUI_PATH/distributed-config.json",
 		default=config_path
 	)
