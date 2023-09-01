@@ -516,7 +516,8 @@ class World:
 
                     logger.info(f"translated legacy config")
                     return config
-
+        if not os.path.exists(self.config_path):
+            return None
         with open(self.config_path, 'r') as config:
             try:
                 return json.load(config)
